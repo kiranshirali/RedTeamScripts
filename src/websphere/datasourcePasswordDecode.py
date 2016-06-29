@@ -1,3 +1,5 @@
+# Modified script. Original source https://stackoverflow.com/questions/26358994/how-to-get-properties-of-authentification-alias-on-was-7-using-wsadmin
+
 import sys, java, java.io, java.lang, base64, binascii
 
 resFile="Results.res"
