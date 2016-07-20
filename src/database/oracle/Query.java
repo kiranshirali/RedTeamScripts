@@ -3,6 +3,8 @@ import java.io.FileReader;
 import java.sql.*;
 
 /**
+ * You will need to compile this before you use the file on the target machine.
+ * 
  * The usage for this would be:
  * 
  * java -cp ojdbc14.jar:.  Query -con connection_host:port_number:instance_name -user user_name -passwd password -query "select * from Table"
