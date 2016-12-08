@@ -1,0 +1,30 @@
+<Server port="8005" shutdown="<INSERT_REALLY_LONG_PASSWORD>">
+    ...
+    ...
+    ...
+    <Service name="Catalina">
+         
+        ...
+        ...
+        ...
+ 
+        <!-- Define a TLS 1.2 HTTP/1.1 Connector on port 443. It also has a set of defined ciphers that were chosen from https://mozilla.github.io/server-side-tls/ssl-config-generator/
+            Also, notice that for the parameter server, there is a single space as the value. This will remove the server banner from any response.
+        -->
+        <Connector port="443"
+        protocol="org.apache.coyote.http11.Http11NioProtocol"
+        SSLEnabled="true" maxHttpHeaderSize="8192" allowTrace="false"
+        maxThreads="150" minSpareThreads="25"
+        maxSpareThreads="75" enableLookups="false"
+        disableUploadTimeout="true" acceptCount="100"
+        scheme="https" secure="true" keystoreFile="<INSERT_PATH_TO_PFX_CERTIFICATE>"
+        keystorePass="<INSERT_CERTIFICATE_PASSWORD>" clientAuth="false"
+        sslProtocol="TLS1.2" keystoreType="PKCS12"
+        server=" "
+        ciphers="ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256"/>
+ 
+        ...
+        ...
+        ...
+    </Service>
+</Server>
